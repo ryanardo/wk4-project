@@ -8,6 +8,7 @@ function Pizza() {
   this.type = "cheese";
   this.sizes = [];
   this.toppings = [];
+  this.price;
 }; // End of 'Pizza' constructor.
 
 function Size(diameter, price) {
@@ -15,9 +16,13 @@ function Size(diameter, price) {
   this.price = price;
 }; // End of 'Size' constructor.
 
+Pizza.prototype.pushSizesArray = function(size) {
+	this.sizes.push(size);
+}; // End of 'pushSizesArray' prototype.
+
 function Topping(topping, price) {
   this.topping = topping;
-  this.cost = price;
+  this.price = price;
 }; // End of 'Topping' constructor.
 
 
