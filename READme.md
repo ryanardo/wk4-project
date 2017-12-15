@@ -1,32 +1,25 @@
-# TITLE
+# **PIZZA**
 
-#### _ SUBTITLE _
+Order Pizza from PIZZA Shop!
 
 By **Ryan G Ferris**
 
 ## DESCRIPTION
 
-_DESCRIPTION_
+_Website that will allow customers to order a Pizza online from the famously delicious PIZZA Shop!_
 
 ## SPECS
 
 | Behavior | Input | Output |
 | :------------- | :------------- | :------------- |
-| Behavior_1 | Input_1 | Output_1 |
-| Behavior_2 | Input_2 | Output_2 |
-| Behavior_3 | Input_3 | Output_3 |
-| Behavior_4 | Input_4 | Output_4 |
-| Behavior_5 | Input_5 | Output_5 |
-| Behavior_6 | Input_6 | Output_6 |
-| Behavior_7 | Input_7 | Output_7 |
-| Behavior_8 | Input_8 | Output_8 |
-| Behavior_9 | Input_9 | Output_9 |
-| Behavior_10 | Input_10 | Output_10 |
+| Add up the price of Pizza toppings | pepperoni & pineapple | price: 10.00 |
+| Add toppings to a Pizza | Add pepperoni & pineapple to cheese pizza | pepperoni & pineapple pizza |
+| Change price of Pizza according to size | 12-inch to 18-inch pizza | price: 18.00 |
 
 ## SETUP/INSTALLATION REQUIREMENTS
 
 * Download and install an up to date web browser
-* Click on the following [link](https://github.com/ryanglenferris/wk4-project.git) to use the PROGRAM_TITLE
+* [Click here](https://ryanglenferris.github.io/wk4-project/) to use the online PIZZA program!
 
 ## KNOWN BUGS
 
