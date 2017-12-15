@@ -16,16 +16,18 @@ function Size(diameter, price) {
   this.price = price;
 }; // End of 'Size' constructor.
 
-Pizza.prototype.pushSizesArray = function(size) {
-	this.sizes.push(size);
-}; // End of 'pushSizesArray' prototype.
-
 function Topping(topping, price) {
   this.topping = topping;
   this.price = price;
 }; // End of 'Topping' constructor.
 
+Pizza.prototype.pushSizesArray = function(size) {
+	this.sizes.push(size);
+}; // End of 'pushSizesArray' prototype.
 
+Pizza.prototype.pushToppingsArray = function(topping) {
+  this.toppings.push(topping)
+}; // End of 'pushToppingsArray' prototype.
 
 
 /* FRONT END LOGIC */
