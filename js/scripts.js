@@ -10,6 +10,10 @@ function Pizza() {
   this.toppings = [];
 }; // End of 'Pizza' constructor.
 
+function Size(diameter, price) {
+  this.diameter = diameter;
+  this.price = price;
+}; // End of 'Size' constructor.
 
 
 
