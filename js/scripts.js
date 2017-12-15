@@ -15,6 +15,12 @@ function Size(diameter, price) {
   this.price = price;
 }; // End of 'Size' constructor.
 
+function Topping(topping, price) {
+  this.topping = topping;
+  this.cost = price;
+}; // End of 'Topping' constructor.
+
+
 
 
 /* FRONT END LOGIC */
