@@ -34,15 +34,39 @@ Pizza.prototype.priceSize = function () {
 
 /* FRONT END LOGIC */
 $(document).ready(function(){
-  var
-  
-
-
-
   $("#pizza-form").submit(function(event){
     event.preventDefault();
-    var selectedSize = ;
-    var selectedToppings = ;
+    // Pizza sizes
+    var smallPizza = new Size(12, 14.00);
+    var mediumPizza = new Size(15, 17.00);
+    var largePizza = new Size(18, 20.00);
 
+    // Pizza topping options
+    var toppingAnchovy = new Topping("Anchovy", 0.50);
+    var toppingArtichoke = new Topping("Artichoke", 0.75);
+    var toppingPepperoni = new Topping("Pepperoni", 1.00);
+    var toppingPineapple = new Topping("Pineapple", 1.50);
+    var toppingMushroom = new Topping("Mushroom", 1.75);
+
+    var selectedSize = $("#pizza-size").val()
+    var toppingsArray = [];
+    var lengthToppingsArray = toppingsArray.length;
+
+    var newPizza = new Pizza();
+
+    var pizzaSize = function() {
+      if (selectedSize === 0) {
+        newPizza.sizes.push(smallPizza);
+      } else if (selectedSize === 1) {
+        newPizza.sizes.push(mediumPizza);
+      } else if (selectedSize === 2) {
+        newPizza.sizes.push(largePizza);
+      }
+    }
+
+    var pizzaToppings = function() {
+
+    }
+    
+  }); // End of pizza-form 'submit' event.
 }); // End of the document 'ready' listener.
-// });
