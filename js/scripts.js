@@ -34,6 +34,10 @@ Pizza.prototype.priceSize = function () {
 
 /* FRONT END LOGIC */
 $(document).ready(function(){
+  var newPizza = new Pizza();
+
+  var customPizza = [];
+
   $("#pizza-form").submit(function(event){
     event.preventDefault();
     // Pizza sizes
@@ -51,22 +55,32 @@ $(document).ready(function(){
     var selectedSize = $("#pizza-size").val()
     var toppingsArray = [];
     var lengthToppingsArray = toppingsArray.length;
-
-    var newPizza = new Pizza();
-
-    var pizzaSize = function() {
-      if (selectedSize === 0) {
+    // Creat new Piiza object.
+    // var newPizza = new Pizza();
+    // push selected size to new Pizza object sizes array.
+    var pizzaSize = function(selectedSize) {
+      if (selectedSize === "1") {
         newPizza.sizes.push(smallPizza);
-      } else if (selectedSize === 1) {
+        console.log("small pizza");
+      } else if (selectedSize === "2") {
         newPizza.sizes.push(mediumPizza);
-      } else if (selectedSize === 2) {
+        console.log("medium pizza");
+      } else if (selectedSize === "3") {
         newPizza.sizes.push(largePizza);
+        console.log("large pizza");
+      } else {
+        console.log("Error! No size selected");
       }
     }
-
+    // Push selected toppings to the Pizza object toppings array.
     var pizzaToppings = function() {
+      $("input[name='topping[]']:checked").each(function () {
+        newPizza.toppings.push(parseInt($(this).val()));
+      });
+    };
 
-    }
-    
+    pizzaSize(selectedSize);
+    pizzaToppings();
+
   }); // End of pizza-form 'submit' event.
 }); // End of the document 'ready' listener.
