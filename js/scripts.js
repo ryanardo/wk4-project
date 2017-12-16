@@ -1,4 +1,6 @@
 /* BACK END LOGIC */
+var pizzasArray = [];
+
 function Pizza() {
   this.type = "cheese";
   this.sizes = [];
@@ -13,32 +15,31 @@ function Topping(topping, price) {
   this.topping = topping;
   this.price = price;
 }; // End of 'Topping' constructor.
+function Pizzas() {
+  this.pizzas = [];
+}
 Pizza.prototype.pushSizesArray = function(size) {
-	this.sizes.push(size);
+  this.sizes.push(size);
 }; // End of Pizza 'pushSizesArray' prototype.
 Pizza.prototype.pushToppingsArray = function(topping) {
   this.toppings.push(topping);
 }; // End of Pizza 'pushToppingsArray' prototype.
-Pizza.prototype.priceToppings = function () {
+Pizza.prototype.priceToppings = function() {
   var lengthToppings = this.toppings.length;
-  for(i = 0; i < lengthToppings; i++) {
+  for (i = 0; i < lengthToppings; i++) {
     this.price += this.toppings[i].price;
   }; // End of the 'Pizza.toppings[]' for-loop.
 }; // End of the Pizza 'priceToppings' prototype.
-Pizza.prototype.priceSize = function () {
+Pizza.prototype.priceSize = function() {
   var lengthSizes = this.sizes.length;
-  for(i = 0; i < lengthSizes; i++) {
+  for (i = 0; i < lengthSizes; i++) {
     this.price += this.sizes[i].price;
   }; // End of the 'Pizza.sizes[]' for-loop.
 };
 
 /* FRONT END LOGIC */
-$(document).ready(function(){
-  var newPizza = new Pizza();
-
-  var customPizza = [];
-
-  $("#pizza-form").submit(function(event){
+$(document).ready(function() {
+  $("#pizza-form").submit(function(event) {
     event.preventDefault();
     // Pizza sizes
     var smallPizza = new Size(12, 14.00);
@@ -51,6 +52,8 @@ $(document).ready(function(){
     var toppingPepperoni = new Topping("Pepperoni", 1.00);
     var toppingPineapple = new Topping("Pineapple", 1.50);
     var toppingMushroom = new Topping("Mushroom", 1.75);
+
+    var newPizza = new Pizza();
 
     var selectedSize = $("#pizza-size").val()
     var toppingsArray = [];
@@ -73,14 +76,40 @@ $(document).ready(function(){
       }
     }
     // Push selected toppings to the Pizza object toppings array.
-    var pizzaToppings = function() {
-      $("input[name='topping[]']:checked").each(function () {
-        newPizza.toppings.push(parseInt($(this).val()));
-      });
-    };
+    var pizzaToppings = $("input[type='checkbox']:checked").map(function() {
+      // return $(this).val();
+      var toppingId = $(this).attr('id');
+      var toppingName = $(this).attr('name');
+      var toppingValue = $(this).val();
+      if (toppingId === "anchovy") {
+        newPizza.toppings.push(toppingAnchovy);
+      } else if (toppingId === "artichoke") {
+        newPizza.toppings.push(toppingArtichoke);
+      } else if (toppingId === "pepperoni") {
+        newPizza.toppings.push(toppingPepperoni);
+      } else if (toppingId === "pineapple") {
+        newPizza.toppings.push(toppingPineapple);
+      } else if (toppingId === "mushroom") {
+        newPizza.toppings.push(toppingMushroom);
+      } else {
+        console.log("Error! No toppings selected");
+      }
+    }); // End of checkbox-checked map array function.
+    // Push pizza to Pizzas Array.
+    var pizzas = function(newPizza) {
+      pizzasArray.push(newPizza);
+    }
+
+    var pizzaPriceTotal = function() {
+
+    }
 
     pizzaSize(selectedSize);
-    pizzaToppings();
+    pizzas(newPizza);
+    newPizza.priceToppings();
+    newPizza.priceSize();
+
+    console.log(pizzasArray);
 
   }); // End of pizza-form 'submit' event.
 }); // End of the document 'ready' listener.
