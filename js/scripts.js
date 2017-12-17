@@ -22,6 +22,12 @@ Pizza.prototype.priceSize = function () {
   }; // End of the 'Pizza.sizes[]' for-loop.
 };
 
+Pizza.prototype.priceToppings = function () {
+  for(i = 0; i < this.toppings.length; i++) {
+    this.price += this.toppings[i].price;
+  }; // End of the 'Pizza.toppings[]' for-loop.
+}; // End of the Pizza 'priceToppings' prototype.
+
 /* FRONT END LOGIC */
 $("#pizza-form").submit(function(event) {
   event.preventDefault();
