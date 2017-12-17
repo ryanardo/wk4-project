@@ -14,6 +14,7 @@ function Topping(topping, price) {
   this.price = price;
 }; // End of 'Topping' constructor.
 Pizza.prototype.pushSizesArray = function(size) {
+  this.sizes = [];
 	this.sizes.push(size);
 }; // End of Pizza 'pushSizesArray' prototype.
 Pizza.prototype.pushToppingsArray = function(topping) {
@@ -59,6 +60,7 @@ $(document).ready(function(){
     // var newPizza = new Pizza();
     // push selected size to new Pizza object sizes array.
     var pizzaSize = function(selectedSize) {
+      newPizza.sizes = [];
       if (selectedSize === "1") {
         newPizza.sizes.push(smallPizza);
         console.log("small pizza");
@@ -71,11 +73,13 @@ $(document).ready(function(){
       } else {
         console.log("Error! No size selected");
       }
+      console.log(newPizza.sizes);
     }
     // Push selected toppings to the Pizza object toppings array.
     var pizzaToppings = function() {
       $("input[name='topping[]']:checked").each(function () {
         newPizza.toppings.push(parseInt($(this).val()));
+        console.log(newPizza);
       });
     };
 
