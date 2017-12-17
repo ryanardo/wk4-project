@@ -1,10 +1,10 @@
 /* BACK END LOGIC */
-function Pizza(size, price) {
-  this.size =
+function Pizza(size, toppings) {
+  this.size = [];
   this.toppings = [];
-  this.price
+  this.price;
+}; // End of the 'Pizza' constructor.
 
-}
 
 
 
