@@ -11,6 +11,11 @@ function Size(width, name, cost) {
   this.cost = cost;
 }; // End of the 'Size' constructor.
 
+function Topping(name, cost) {
+  this.name = name;
+  this.cost = cost;
+}; // End of the 'Topping'  constructor.
+
 
 
 /* FRONT END LOGIC */
