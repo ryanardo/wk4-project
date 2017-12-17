@@ -16,8 +16,11 @@ function Topping(name, costTopping) {
   this.cost = costTopping;
 }; // End of the 'Topping'  constructor.
 
-
-
+Pizza.prototype.priceSize = function () {
+  for(i = 0; i < this.sizes.length; i++) {
+    this.price += this.sizes[i].price;
+  }; // End of the 'Pizza.sizes[]' for-loop.
+};
 
 /* FRONT END LOGIC */
 $("#pizza-form").submit(function(event) {
