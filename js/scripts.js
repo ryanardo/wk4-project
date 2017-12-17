@@ -5,16 +5,17 @@ function Pizza() {
   this.price;
 }; // End of the 'Pizza' constructor.
 
-function Size(width, name, cost) {
+function Size(width, name, costSize) {
   this.width = width;
   this.name = name;
-  this.cost = cost;
+  this.costSize = costSize;
 }; // End of the 'Size' constructor.
 
-function Topping(name, cost) {
+function Topping(name, costTopping) {
   this.name = name;
-  this.cost = cost;
+  this.cost = costTopping;
 }; // End of the 'Topping'  constructor.
+
 
 
 
