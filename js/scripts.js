@@ -50,15 +50,11 @@ $(document).ready(function() {
     var pizzaSize = function(selectedSize) {
       if (selectedSize === "inch12") {
         newPizza.size.push(smallPizza);
-        console.log("inch12");
       } else if (selectedSize === "inch15") {
         newPizza.size.push(mediumPizza);
-        console.log("inch15");
       } else if (selectedSize === "inch18") {
         newPizza.size.push(largePizza);
-        console.log("inch18");
       } else {
-        console.log("Error! No Pizza size selected.");
       }
     }; // End of the 'pizzaSize' function.
     var pizzaToppings = function() {
@@ -76,7 +72,6 @@ $(document).ready(function() {
            } else if (checked === "mushroom") {
              newPizza.toppings.push(mushroom)
            } else {
-             console.log("Warning! No toppings selected.");
            }
       });
     }; // End of the  'selectedToppings' function.
@@ -94,9 +89,5 @@ $(document).ready(function() {
     $("#size-output").text(newPizza.size[0].name + ", " + newPizza.size[0].width + " inch Pizza");
     toppingsDisplay();
     $("#price-output").text("$" + newPizza.price);
-
-
-
-
   }); // End of 'pizza-form' submit listener.
 }); // End of document 'ready' listener.
