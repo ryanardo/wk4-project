@@ -19,36 +19,36 @@
           <div class="input-field col-lg-4">
             <select class="custom-select" id="pizza-size">
               <option selected>Choose your size</option>
-              <option value="1"> Small, 12" pizza</option>
-              <option value="2" selected="selected"> Medium, 15" pizza</option>
-              <option value="3"> Large, 18" pizza</option>
+              <option value="inch12"> Small, 12" pizza</option>
+              <option value="inch15" selected="selected"> Medium, 15" pizza</option>
+              <option value="inch18"> Large, 18" pizza</option>
               <label>Select which size you would like your Pizza to be.</label>
             </select>
           </div>
           <div class="input-field col-sm-6">
             <div class="form-check form-check-inline">
               <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="anchovy" value="topping1" name="Anchovy" checked> Anchovy
+                <input class="form-check-input" type="checkbox" id="topping1" value="anchovy" name="topping" checked> Anchovy
               </label>
             </div>
             <div class="form-check form-check-inline">
               <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="artichoke" value="topping2" name="Artichoke"> Artichoke
+                <input class="form-check-input" type="checkbox" id="topping2" value="artichoke" name="topping"> Artichoke
               </label>
             </div>
             <div class="form-check form-check-inline">
               <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="pepperoni" value="topping3" name="Pepperoni" checked> Pepperoni
+                <input class="form-check-input" type="checkbox" id="topping3" value="pepperoni" name="topping" checked> Pepperoni
               </label>
             </div>
             <div class="form-check form-check-inline">
               <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="pineapple" value="topping3" name="Pineapple"> Pineapple
+                <input class="form-check-input" type="checkbox" id="topping4" value="pineapple" name="topping"> Pineapple
               </label>
             </div>
             <div class="form-check form-check-inline">
               <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="mushroom" value="topping3" name="Mushroom" checked> Mushroom
+                <input class="form-check-input" type="checkbox" id="topping5" value="mushroom" name="topping" checked> Mushroom
               </label>
             </div>
           </div>
@@ -64,7 +64,10 @@
             <h3>Your order: </h3>
             <p>Thank you for ordering! Your <span id="pizzaOutput"></span> Pizza is on it's way!</p>
             <p>Size: <span id="size-output"></span></p>
-            <p>Topping(s): <span id="toppings-output"></span></p>
+            <p>Topping(s): </p>
+            <ul id="toppings-output">
+
+            </ul>
             <p>Price: <span id="price-output"></span></p>
           </div>
         </div>
